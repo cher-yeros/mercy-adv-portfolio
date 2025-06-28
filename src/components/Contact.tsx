@@ -1,92 +1,127 @@
+"use client";
+
 export default function Contact() {
   return (
-    <section id="contact" className="get-started">
-      <div className="container">
-        <div className="row text-center" data-aos="fade-up">
-          <h1 className="display-3 fw-bold text-capitalize">Get started</h1>
-          <div className="heading-line"></div>
-          <p className="lh-lg">
-            Connect with us to ignite your digital transformation journey.
-          </p>
-        </div>
+    <section id="contact" className="contact section">
+      {/* Section Title */}
+      <div className="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>
+          Reach out to Mercy Advertising — whether you’re starting a new
+          project, looking for creative direction, or just want to say hello.
+        </p>
+      </div>
 
-        {/* <!-- START THE CTA CONTENT  --> */}
-        <div className="row text-white">
-          <div className="col-12 col-lg-6 gradient shadow p-3">
-            <div className="cta-info w-100">
-              <h4 className="display-4 fw-bold">
-                100% Satisfaction Guaranteed
-              </h4>
-              <p className="lh-lg">
-                At Ifnet, your success is our top priority. We’re dedicated to
-                delivering tailor-made digital solutions that not only meet your
-                needs but exceed your expectations.
+      <div className="container">
+        <div className="row g-4 g-lg-5">
+          {/* Contact Info */}
+          <div className="col-lg-5">
+            <div className="info-box">
+              <h3>Contact Info</h3>
+              <p>
+                Let's connect and bring your brand to life through bold ideas
+                and creative solutions.
               </p>
-              <h3 className="display-3--brief">What will be the next step?</h3>
-              <ul className="cta-info__list">
-                <li>We'll prepare the proposal.</li>
-                <li>we'll discuss it together.</li>
-                <li>let's start the discussion.</li>
-                <li>We'll kick-off your project.</li>
-              </ul>
+
+              <div className="info-item">
+                <div className="icon-box">
+                  <i className="bi bi-geo-alt"></i>
+                </div>
+                <div className="content">
+                  <h4>Our Location</h4>
+                  <p>Adama</p>
+                  <p>Ethiopia</p>
+                </div>
+              </div>
+
+              <div className="info-item">
+                <div className="icon-box">
+                  <i className="bi bi-telephone"></i>
+                </div>
+                <div className="content">
+                  <h4>Phone</h4>
+                  <p>+251 938 336 078</p>
+                </div>
+              </div>
+
+              <div className="info-item">
+                <div className="icon-box">
+                  <i className="bi bi-envelope"></i>
+                </div>
+                <div className="content">
+                  <h4>Email</h4>
+                  <p>mihrettadele0011@gmail.com</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div
-            className="col-12 col-lg-6 bg-white shadow p-3"
-            // data-aos="fade-up"
-            // data-aos-delay="200"
-          >
-            <div className="form w-100 pb-2">
-              <h4 className="display-3--title mb-5">start your project</h4>
+
+          {/* Contact Form */}
+          <div className="col-lg-7">
+            <div className="contact-form">
+              <h3>Get In Touch</h3>
+              <p>
+                Tell us a bit about your vision or ask a question — we’re always
+                excited to hear from you.
+              </p>
+
               <form
-                action="https://formspree.io/f/xwplkoqa"
+                action="https://example.com/contact" // <-- replace with your endpoint
                 method="POST"
-                className="row"
+                className="php-email-form"
               >
-                <div className="col-lg-6 col-md mb-3">
-                  <input
-                    type="text"
-                    name="full_name"
-                    placeholder="Full Name"
-                    id="inputFirstName"
-                    className="shadow form-control form-control-lg"
-                  />
-                </div>
-                <div className="col-lg-6 col-md mb-3">
-                  <input
-                    type="tel"
-                    name="phone_number"
-                    placeholder="Phone Number"
-                    id="inputLastName"
-                    className="shadow form-control form-control-lg"
-                  />
-                </div>
-                <div className="col-lg-12 mb-3">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address"
-                    id="inputEmail"
-                    className="shadow form-control form-control-lg"
-                  />
-                </div>
-                <div className="col-lg-12 mb-3">
-                  <textarea
-                    name="message"
-                    placeholder="Message"
-                    id="message"
-                    rows={8}
-                    className="shadow form-control form-control-lg"
-                  ></textarea>
-                </div>
-                <div className="text-center d-grid mt-1">
-                  <button
-                    type="submit"
-                    className="btn btn-primary rounded-pill pt-3 pb-3"
-                  >
-                    submit
-                    <i className="fas fa-paper-plane"></i>
-                  </button>
+                <div className="row gy-4">
+                  <div className="col-md-6">
+                    <input
+                      type="text"
+                      name="name"
+                      className="form-control"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+
+                  <div className="col-md-6">
+                    <input
+                      type="email"
+                      className="form-control"
+                      name="email"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+
+                  <div className="col-12">
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="subject"
+                      placeholder="Subject"
+                      required
+                    />
+                  </div>
+
+                  <div className="col-12">
+                    <textarea
+                      className="form-control"
+                      name="message"
+                      rows={6}
+                      placeholder="Message"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div className="col-12 text-center">
+                    <div className="loading">Loading</div>
+                    <div className="error-message"></div>
+                    <div className="sent-message">
+                      Your message has been sent. Thank you!
+                    </div>
+
+                    <button type="submit" className="btn">
+                      Send Message
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
